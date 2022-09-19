@@ -1,7 +1,7 @@
 function getComputerChoice() {
     let computerChoice = "";
     let randomNumber = Math.floor(Math.random() * 3);
-    
+
     if (randomNumber === 0) {
         computerChoice = "Rock";
     }
@@ -15,4 +15,15 @@ function getComputerChoice() {
     return computerChoice;
 }
 
+function getPlayerSelection() {
+    let playerSelection = prompt("Enter your choice: (Rock, Paper, Scissors)");
+    return playerSelection;
+}
+
 console.log(getComputerChoice());
+console.log(getPlayerSelection());
+
+function playRound(){
+    let computerSelection = getComputerChoice();
+
+}
