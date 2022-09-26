@@ -1,5 +1,6 @@
 const cpuScoreText = document.querySelector("#cpuScore");
 const playerScoreText = document.querySelector("#playerScore");
+const resultDescription = document.querySelector("#resultDescription");
 const resultText = document.querySelector("#result");
 const btnRock = document.querySelector("#Rock");
 const btnPaper = document.querySelector("#Paper");
@@ -64,11 +65,24 @@ function updateScore(){
     playerScoreText.textContent = playerScore;
     
     if (playerScore == 5){
-        alert("Congratulations, you won!");
+        playerScoreText.classList.add("win");
+        cpuScoreText.classList.add("lose");
+        resultDescription.textContent = "Final result:";
+        resultText.textContent = "Congratulations, you won!";
+        btnRestart.classList.remove("hide");
     }
 
     if (cpuScore == 5){
-        alert("The computer won. Try again!");
+        cpuScoreText.classList.add("win");
+        playerScoreText.classList.add("lose");
+        resultDescription.textContent = "Final result:";
+        resultText.textContent = "You lost. Try again!";
+        btnRestart.classList.remove("hide");
+    }
+
+    if ((playerScore < 5) && (cpuScore < 5)) {
+        cpuScoreText.classList.remove("win", "lose");
+        playerScoreText.classList.remove("win", "lose");
     }
 }
 
@@ -77,20 +91,40 @@ function updateScore(){
 
 
 btnRock.addEventListener('click', () => {
+    if ((playerScore < 5) && (cpuScore < 5)){
     playRound("rock", getComputerChoice());
     updateScore();
+    }
+    else {
+        alert("Start a new game if you want to play again.")
+    }
 });
+
 btnPaper.addEventListener('click', () => {
+    if ((playerScore < 5) && (cpuScore < 5)){
     playRound("paper", getComputerChoice());
     updateScore();
+    }
+    else {
+        alert("Start a new game if you want to play again.")
+    }
 });
+
 btnScissors.addEventListener('click', () => {
+    if ((playerScore < 5) && (cpuScore < 5)){
     playRound("scissors", getComputerChoice());
     updateScore();
+    }
+    else {
+        alert("Start a new game if you want to play again.")
+    }
 });
+
 btnRestart.addEventListener('click', () => {
+    resultDescription.textContent = "Result of the last round: "
     resultText.textContent = "No game played yet.";
     playerScore = 0;
     cpuScore = 0;
     updateScore();
+    btnRestart.classList.add("hide");
 })

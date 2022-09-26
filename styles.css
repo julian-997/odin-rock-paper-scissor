@@ -45,3 +45,15 @@ body {
 .scoreBox button {
     width: 100px;
 }
+
+.win {
+    color: green;
+}
+
+.lose {
+    color: red;
+}
+
+.hide {
+    display: none;
+}
