@@ -71,6 +71,7 @@ const resultText = document.querySelector("#result");
 const btnRock = document.querySelector("#Rock");
 const btnPaper = document.querySelector("#Paper");
 const btnScissors = document.querySelector("#Scissors");
+const btnRestart = document.querySelector("#restart")
 
 
 btnRock.addEventListener('click', () => {
@@ -85,3 +86,9 @@ btnScissors.addEventListener('click', () => {
     playRound("scissors", getComputerChoice());
     updateScore();
 });
+btnRestart.addEventListener('click', () => {
+    resultText.textContent = "No game played yet.";
+    playerScore = 0;
+    cpuScore = 0;
+    updateScore();
+})
