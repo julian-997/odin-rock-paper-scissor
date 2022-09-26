@@ -1,3 +1,11 @@
+const cpuScoreText = document.querySelector("#cpuScore");
+const playerScoreText = document.querySelector("#playerScore");
+const resultText = document.querySelector("#result");
+const btnRock = document.querySelector("#Rock");
+const btnPaper = document.querySelector("#Paper");
+const btnScissors = document.querySelector("#Scissors");
+const btnRestart = document.querySelector("#restart");
+
 let playerScore = 0;
 let cpuScore = 0;
 
@@ -65,13 +73,7 @@ function updateScore(){
 }
 
 
-const cpuScoreText = document.querySelector("#cpuScore");
-const playerScoreText = document.querySelector("#playerScore");
-const resultText = document.querySelector("#result");
-const btnRock = document.querySelector("#Rock");
-const btnPaper = document.querySelector("#Paper");
-const btnScissors = document.querySelector("#Scissors");
-const btnRestart = document.querySelector("#restart")
+
 
 
 btnRock.addEventListener('click', () => {
