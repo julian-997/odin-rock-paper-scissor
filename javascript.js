@@ -60,21 +60,7 @@ function playRound(playerSelection, computerSelection){
 function game() {
     let playerScore = 0;
     let comScore = 0;
-    for (let i = 0; i < 5; i++) {
-        let roundResult = playRound(getPlayerSelection(), getComputerChoice());
-        alert(roundResult);
-        if (roundResult[4] == "w") {        /* If the game returns a win, it is counted here. */
-            playerScore++;
-        }
-        else if (roundResult[4] == "l") {   /* If the game returns a lose, it is counted here. */
-            comScore++;
-        }
-        else if (roundResult[4] == "c") {   /* If the game returns a invalid choice, the current round is not added to the played rounds. */
-            i--;
-        }
-    }
     
-    alert("Player score: " + playerScore + " - Computer Score: " + comScore);
 }
 
 game();
